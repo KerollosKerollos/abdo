@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="usineJusFruit.View.Reservations"
+             Title="Reservations">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Picker
+                ItemsSource="{Binding Clients}" 
+                ItemDisplayBinding ="{Binding LastName}" 
+                SelectedItem="{Binding ClientSelection}"
+                WidthRequest="250"
+                HorizontalOptions="Start"  
+             />
+            <Button Command="{Binding getReservationsCommand}" Text="Refresh"/>
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

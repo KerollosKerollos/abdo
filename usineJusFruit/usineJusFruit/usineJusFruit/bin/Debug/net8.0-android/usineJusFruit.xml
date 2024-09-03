@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>usineJusFruit</name>
+    </assembly>
+    <members>
+        <member name="T:usineJusFruit.Model.Production.Product">
+            <summary>
+            enumeration
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.Model.Production.Product.DateCueillette">
+            <summary>
+            verifier que la date est dans le passé
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccess.#ctor(System.String)">
+            <summary>
+            constructor with just the fileName for AccessPath
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccess.#ctor(System.String,System.String[])">
+            <summary>
+            Constructor with fileName only one and authorized file extensions
+            </summary>
+            <param name="filePath"></param>
+            <param name="extensions"> Exemple {".xlxs",".json"}</param>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccess.#ctor(usineJusFruit.Utilities.DataAccess.Files.DataFilesManager)">
+            <summary>
+            Constructor associated with a DatafileManager object, it will contains all datas files informations (path and subject)
+            </summary>
+            <param name="dfm"></param>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.DataAccess.AccessPath">
+            <summary>
+            AccessPath file to the data source
+            </summary>
+            
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.DataAccess.Extensions">
+            <summary>
+            List of authorized extensions .txt, csv, .Json, .xml ...for the AccessPath file
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.DataAccess.IsValidAccessPath">
+            <summary>
+            Continue to check AccessPath even after constructor (in the case of the file may be moved, renamed or deleted)
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccess.CheckAccessPath(System.String)">
+            <summary>
+            Check AccessPath to the data source file. File path must exist and if
+            extensions are specified, the extension file must match to one of them
+            </summary>
+            <returns>true if valid path and extension file</returns>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccess.#ctor(usineJusFruit.Utilities.DataAccess.Files.DataFilesManager,usineJusFruit.Utilities.Interfaces.IAlertService)">
+             <summary> 
+             Constructor associated with a DatafileManager object, it will contains all datas 
+            files informations(path subject)
+             </summary> 
+             <param name="dfm"></param> 
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccessSqlFile.#ctor(usineJusFruit.Utilities.DataAccess.Files.DataFilesManager,usineJusFruit.Utilities.Interfaces.IAlertService)">
+            <summary>
+            Constructor associated with a datafileManager, it contains path to a config text file
+            wich contains path to csv files
+            </summary>
+            <param name="dfm"></param>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.DataAccessSqlFile.GetAllTickets">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.Files.DataFile.FileName">
+            <summary>
+            fileName like CsvItems.csv
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.Files.DataFile.Concern">
+            <summary>
+            CODE for the subject, informations stored in this file. Ex : "ITEMS"  
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.Files.DataFile.FullPath">
+            <summary>
+            full path file Ex : "C:\\COURS\\  ..\\fileName.csv"
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.Utilities.DataAccess.Files.DataFile.FilesPathDir">
+            <summary>
+            directory must be the same for all files => static property
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.Files.DataFilesCollection.GetFilePathByCodeFunction(System.String)">
+            <summary>
+            get full path file for a specific function ("ITEMS","TABLES","BOOKINGS",...)
+            </summary>
+            <param name="concern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:usineJusFruit.Utilities.DataAccess.Files.DataFilesCollection.GetValueByCodeFunction(System.String)">
+             <summary> 
+             get value (fileName) for a specific function ("ITEMS","TABLES","BOOKINGS",...) 
+             RESTAURANT_NAME,Iram Ps Food Service  => GetValueByCodeFunction(RESTAURANT_NAME) 
+            will return "Iram Ps Food Service" 
+             </summary> 
+             <param name="concern"></param> 
+             <returns></returns> 
+        </member>
+        <member name="P:usineJusFruit.Utilities.Interfaces.IDataAccess.AccessPath">
+            <summary>
+            Access string to the external source (file path, connection string ...)
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.ShowAlert(System.String,System.String)">
+            <summary>
+            show alert with a pop up display with just a title and a message
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.ShowConfirmation(System.String,System.String)">
+            <summary>
+            show alert with a pop up display with a confirmation question Yes or No
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.ShowConfirmation(System.String,System.String,System.String,System.String)">
+            <summary>
+            show alert with a pop up display with a confirmation with personnel text accept and cancel
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.ShowQuestion(System.String,System.String[])">
+            <summary>
+            show alert with a pop up display with a list of buttons (multiple choices)
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.ShowPrompt(System.String,System.String)">
+            <summary>
+            show alert with a pop up display with an entry box
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.Utilities.Services.AlertServiceDisplay.GetCurrentPage">
+            <summary>
+            get CurrentPage concerned
+            </summary>
+        </member>
+        <member name="T:usineJusFruit.ViewModel.ClientsPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.clientSelection">
+            <summary>
+            Staff Member selected in the listview
+            </summary>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.clientPopupDisplayed">
+            <summary>
+            Staff Member who will be displayed in the popup screen
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:usineJusFruit.ViewModel.ClientsPageViewModel.isNewClientrAction" -->
+        <member name="M:usineJusFruit.ViewModel.ClientsPageViewModel.AddNewStaff">
+            <summary>
+            Command binded to the "Add new Member" button in the pop up display
+            </summary>
+        </member>
+        <member name="M:usineJusFruit.ViewModel.ClientsPageViewModel.SelectStaffMember(usineJusFruit.Model.Usine.People.Client)">
+            <summary>
+            Get selection event from the listView
+            Show popup for an existing staffMember read and edition
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.ClientSelection">
+            <inheritdoc cref="F:usineJusFruit.ViewModel.ClientsPageViewModel.clientSelection"/>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.ClientPopupDisplayed">
+            <inheritdoc cref="F:usineJusFruit.ViewModel.ClientsPageViewModel.clientPopupDisplayed"/>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.IsNewClientrAction">
+            <inheritdoc cref="F:usineJusFruit.ViewModel.ClientsPageViewModel.isNewClientrAction"/>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.saveDatasCommand">
+            <summary>The backing field for <see cref="P:usineJusFruit.ViewModel.ClientsPageViewModel.SaveDatasCommand"/>.</summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.SaveDatasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:usineJusFruit.ViewModel.ClientsPageViewModel.SaveDatas"/>.</summary>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.showNewClientPopupCommand">
+            <summary>The backing field for <see cref="P:usineJusFruit.ViewModel.ClientsPageViewModel.ShowNewClientPopupCommand"/>.</summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.ShowNewClientPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:usineJusFruit.ViewModel.ClientsPageViewModel.ShowNewClientPopup"/>.</summary>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.addNewStaffCommand">
+            <summary>The backing field for <see cref="P:usineJusFruit.ViewModel.ClientsPageViewModel.AddNewStaffCommand"/>.</summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.AddNewStaffCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:usineJusFruit.ViewModel.ClientsPageViewModel.AddNewStaff"/>.</summary>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.ClientsPageViewModel.selectStaffMemberCommand">
+            <summary>The backing field for <see cref="P:usineJusFruit.ViewModel.ClientsPageViewModel.SelectStaffMemberCommand"/>.</summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.ClientsPageViewModel.SelectStaffMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:usineJusFruit.ViewModel.ClientsPageViewModel.SelectStaffMember(usineJusFruit.Model.Usine.People.Client)"/>.</summary>
+        </member>
+        <member name="T:usineJusFruit.ViewModel.MainPageViewModel">
+            <inheritdoc/>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:usineJusFruit.ViewModel.MainPageViewModel.dataAccess" -->
+        <member name="P:usineJusFruit.ViewModel.MainPageViewModel.Products">
+            <summary>
+            collection of all StaffMembers
+            </summary>
+        </member>
+        <member name="F:usineJusFruit.ViewModel.MainPageViewModel.productSelection">
+            <summary>
+            Staff Member selected in the listview
+            </summary>
+        </member>
+        <member name="P:usineJusFruit.ViewModel.MainPageViewModel.ProductSelection">
+            <inheritdoc cref="F:usineJusFruit.ViewModel.MainPageViewModel.productSelection"/>
+        </member>
+        <member name="F:usineJusFruit.View.MainPage.dataAccess">
+            <summary>
+            Manager to the data access (Csv, Json, XAML, SQL...)
+            </summary>
+        </member>
+        <member name="F:usineJusFruit.View.MainPage.alert">
+            <summary>
+            Manager to the data access (Csv, Json, XAML, SQL...)
+            </summary>
+        </member>
+        <member name="F:usineJusFruit.View.MainPage.mainPageViewModel">
+            <summary>
+            keep a reference to the ViewModel for eventual testings
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClientSelection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClientSelection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClientPopupDisplayed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClientPopupDisplayed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsNewClientrAction">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsNewClientrAction" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProductSelection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProductSelection" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClientSelection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClientSelection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClientPopupDisplayed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClientPopupDisplayed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNewClientrAction">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNewClientrAction" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProductSelection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProductSelection" generated properties.</summary>
+        </member>
+    </members>
+</doc>
